@@ -1,7 +1,21 @@
 @import "tailwindcss";
 
 @theme{
-  --color-laranja-:#f99a41;
+  --color-laranja:#f99a41;
   --color-fundo:#ffe3b3;
   --color-laranja-escuro:#e46935;
+  --color-texto:#d65823;
+}
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.6s ease-in-out infinite;
+  transform-origin: top left;
 }
