@@ -5,6 +5,9 @@
   --color-fundo:#ffe3b3;
   --color-laranja-escuro:#e46935;
   --color-texto:#d65823;
+  --color-header:#FD9B4B;
+  --color-blackfundo:#1F2123;
+  --color-headerblack:#141414;
 }
 @keyframes wiggle {
   0%, 100% {

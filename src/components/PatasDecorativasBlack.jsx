@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import pata from "../assets/patinhas Claras.png"; // nome sem espaço
+import pata from "../assets/pata_escura 1.png"; // nome sem espaço
 
-export function PatasDecorativas({ quantidade = 20 }) {
+export function PatasDecorativasBlack({ quantidade = 20 }) {
   const [patinhas, setPatinhas] = useState([]);
 
   useEffect(() => {
@@ -42,4 +42,3 @@ export function PatasDecorativas({ quantidade = 20 }) {
     </div>
   );
 }
-
