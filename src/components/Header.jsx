@@ -1,5 +1,8 @@
 import logo from "../assets/WellPet logo.png";
 import { useState, useEffect, useRef } from "react";
+import logo_black from "../assets/logo_black.png";
+
+
 
 export function Header({ isDarkTheme, setIsDarkTheme }) {
   const headerRef = useRef();
@@ -26,11 +29,18 @@ export function Header({ isDarkTheme, setIsDarkTheme }) {
         <div className="mx-auto max-w-7xl flex flex-col items-center">
           {/* Parte superior: Logo e Navegação */}
           <div className="w-full flex justify-between items-center">
+            
+            { isDarkTheme ?
             <img
-              src={logo}
+               src={logo_black} 
+              alt="Logo"
+              className="w-[150px] h-[70px] 2xl:w-[180px] 2xl:h-[90px] object-contain"
+            />  
+            : <img
+               src={logo} 
               alt="Logo"
               className="w-[150px] h-[60px] 2xl:w-[180px] 2xl:h-[90px] object-contain"
-            />
+            />}
 
             {isMobile ? (
               <button
@@ -52,11 +62,11 @@ export function Header({ isDarkTheme, setIsDarkTheme }) {
           </div>
 
           {/* Seção Tema: Switch Claro e Escuro */}
-          <div className="w-full mt-4 pt-2 pb-2 rounded-b-3xl">
+          <div className="w-full mt-4 pt-2 pb-2 rounded-b-3xl " >
             <div className="mx-auto max-w-7xl flex justify-start items-center">
               <div
                 onClick={() => setIsDarkTheme(!isDarkTheme)}
-                className={`relative w-16 h-8 ${isDarkTheme ? "bg-gray-300" : "bg-white"} rounded-full cursor-pointer`}
+                className={`relative w-16 h-8 max-sm:w-14 max-sm:h-7 ${isDarkTheme ? "bg-gray-300" : "bg-white"} rounded-full cursor-pointer`}
               >
                 <span
                   className={`absolute w-6 h-6 top-0.5 ${isDarkTheme ? "bg-white" : "bg-black"} rounded-full transition-transform duration-300 ease-in-out ${

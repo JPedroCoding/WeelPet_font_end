@@ -4,7 +4,7 @@ import pata from "../assets/patas_claras_1.png";
 
 export function Body({ isDarkTheme }) {
   return (
-    <div className={`bottom-8 flex flex-col sm:flex-row px-8 md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center justify-between min-h-screen sm:px-8 md:px-16 xl:px-20 2xl:px-24 relative z-10 max-w-[2500px] 
+    <div className={` max-sm:bottom-20  sm:p-4 sm:flex sm:bottom-8 sm:items-center  flex flex-col sm:flex-row px-8 md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center justify-between min-h-screen sm:px-8 md:px-16 xl:px-20 2xl:px-24 relative z-10 max-w-[2500px] 
       
     `}>
       {/* COLUNA DO TEXTO */}
@@ -18,7 +18,7 @@ export function Body({ isDarkTheme }) {
           Garantindo alimento e água mesmo <br />
           quando você não está em casa.
         </p>
-        <button className={`text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white font-bold bg-laranja p-3 md:p-4 px-6 md:px-8 rounded-3xl`}>
+        <button className={`sm:text-sm max-sm:text-xs text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white font-bold bg-laranja p-3 md:p-4 px-6 md:px-8 rounded-3xl`}>
           Comece Agora
         </button>
       </div>
@@ -27,7 +27,7 @@ export function Body({ isDarkTheme }) {
       <img
         src={dog}
         alt="Imagem pet"
-        className="w-[300px] sm:w-[400px] xl:w-[500px] 2xl:w-[600px] sm:top-none fixed sm:relative sm:top-0 top-110"
+        className=" max-sm:mt-[-100px] max-sm:ml-[120px] max-sm:pl max-sm:w-[200px] sm:-top-10 w-[300px] sm:w-[300px] md:w-[400px] xl:w-[500px] 2xl:w-[600px] sm:top-none fixed sm:relative  top-110 "
       />
 
       {/* Barra Laranja Inferior */}
