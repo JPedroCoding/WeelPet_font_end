@@ -27,7 +27,7 @@ export function Body({ isDarkTheme }) {
       <img
         src={dog}
         alt="Imagem pet"
-        className=" max-sm:mt-[-100px] max-sm:ml-[120px] max-sm:pl max-sm:w-[200px] sm:-top-10 w-[300px] sm:w-[300px] md:w-[400px] xl:w-[500px] 2xl:w-[600px] sm:top-none fixed sm:relative  top-110 "
+        className=" max-sm:mt-[-100px] max-sm:ml-[120px] max-sm:pl max-sm:w-[200px] sm:-top-10 w-[250px] sm:w-[250px] md:w-[300px] xl:w-[400px] 2xl:w-[500px] sm:top-none fixed sm:relative  top-110 "
       />
 
       {/* Barra Laranja Inferior */}
