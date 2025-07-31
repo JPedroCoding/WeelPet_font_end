@@ -6,13 +6,15 @@ import patinha from "../assets/Patinhas Claras.png";
 import ossoBlack from "../assets/Entrar-black.png"
 
 export function CriarConta({ isDarkTheme }) {
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login attempt with:", { email, password });
+    console.log("Login attempt with:", { nome, email, password, passwordConfirm });
     navigate("/");
   };
 
@@ -23,23 +25,21 @@ export function CriarConta({ isDarkTheme }) {
         {/* Formulário */}
         <div className="w-full sm:w-1/2 flex justify-center items-center max-sm:mb-10">
           <div className={`   ${isDarkTheme ? "bg-headerblack" : "bg-header"}       bg-header rounded-3xl shadow-2xl p-6 sm:p-8 sm:-mt-30 text-white w-full  max-w-md max-sm:w-[90%]`}>
-            <img src={patinha} alt="" className="w-10 absolute" />
-            <h2 className="text-3xl  text-black font-bold text-center mb-6 z-1">Cadastro</h2>
-            <img src={patinha} alt="" className="w-10 absolute top-70 left-4 z-1  " />
+            {/* <img src={patinha} alt="" className="w-10 absolute" /> */}
+            <h2 className={`  ${isDarkTheme ? "text-white" : "text-black"} text-3xl  text-black font-bold text-center mb-6 z-1`}>Cadastro</h2>
+            {/* <img src={patinha} alt="" className="w-10 absolute top-70 left-4 z-1  " />
             <img src={patinha} alt="" className="w-10 absolute top-99 left-80  z-1" />
             <img src={patinha} alt="" className="w-10 absolute -top-20 left-90  z-1" />
-            <img src={patinha} alt="" className="w-10 absolute top-70 left-80  z-1" />
+            <img src={patinha} alt="" className="w-10 absolute top-70 left-80  z-1" /> */}
 
             <form onSubmit={handleSubmit} className="space-y-2">
-              
-
               <div>
                 <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ?  "border-gray-300 text-gray-300 bg-headerblack":   "  bg-header   border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
+                  type="text"
+                  id="nome"
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ? "border-gray-300 text-gray-300 bg-headerblack" : "bg-header border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
                   placeholder="Nome de Usuário"
                   required
                 />
@@ -50,20 +50,8 @@ export function CriarConta({ isDarkTheme }) {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ?  "border-gray-300 text-gray-300 bg-headerblack":   "  bg-header   border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
+                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ? "border-gray-300 text-gray-300 bg-headerblack" : "bg-header border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
                   placeholder="Email"
-                  required
-                />
-              </div>
-              
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ?  "border-gray-300 text-gray-300 bg-headerblack":   "  bg-header   border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
-                  placeholder="Senha"
                   required
                 />
               </div>
@@ -73,7 +61,18 @@ export function CriarConta({ isDarkTheme }) {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ?  "border-gray-300 text-gray-300 bg-headerblack":   "  bg-header   border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
+                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ? "border-gray-300 text-gray-300 bg-headerblack" : "bg-header border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
+                  placeholder="Senha"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  id="password_c"
+                  value={passwordConfirm}
+                  onChange={(e) => setPasswordConfirm(e.target.value)}
+                  className={`w-full z-10 px-4 py-3 font-bold ${isDarkTheme ? "border-gray-300 text-gray-300 bg-headerblack" : "bg-header border-black"} border-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white`}
                   placeholder="Confirmar Senha"
                   required
                 />
@@ -85,9 +84,9 @@ export function CriarConta({ isDarkTheme }) {
                 >
                   {ossoButton ? (
                     <img 
-                      src={ isDarkTheme ? ossoBlack :ossoButton}
+                      src={isDarkTheme ? ossoBlack : ossoButton}
                       alt="Entrar"
-                      className="w-full  h-full object-contain"
+                      className="w-full h-full object-contain"
                     />
                   ) : (
                     <span className="w-full h-full flex items-center justify-center bg-orange-600 text-white font-bold rounded-lg">
@@ -105,12 +104,12 @@ export function CriarConta({ isDarkTheme }) {
           <img
             src={gatinhaImg}
             alt="Gatinha"
-            className="w-64  h-auto object-contain ml-8 max-sm:ml-[-30px] max-sm:mt-[-20px] max-sm:w-40 max-sm:absolute max-sm:top-full  max-sm:translate-y-[-60%] max-sm:translate-x-[90%]"
+            className="w-64 h-auto object's-contain ml-8 max-sm:ml-[-30px] max-sm:mt-[-20px] max-sm:w-40 max-sm:absolute max-sm:top-full max-sm:translate-y-[-60%] max-sm:translate-x-[90%]"
           />
         </div>
       </div>
-    {/* Barra Laranja Inferior */}
-      <footer className={`fixed bottom-0  left-0 right-0 ${isDarkTheme ? "bg-headerblack" : "bg-header"} text-white z-40 px-6 py-4 shadow-md`}>
+      {/* Barra Laranja Inferior */}
+      <footer className={`fixed bottom-0 left-0 right-0 ${isDarkTheme ? "bg-headerblack" : "bg-header"} text-white z-40 px-6 py-4 shadow-md`}>
         <div className="mx-auto max-w-7xl flex justify-center items-center">
           <p className="text-sm sm:text-base">© 2025 WellPet - Todos os direitos reservados</p>
         </div>

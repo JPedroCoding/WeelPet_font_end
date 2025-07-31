@@ -6,7 +6,7 @@ import { Body } from './components/Body';
 import { useState, useEffect } from 'react';
 import { Referencias } from './components/Referencias';
 import { Login } from './components/login';
-import { Sobre } from './components/sobre';
+import { Sobre } from './components/Sobre';
 import { Dispenser } from './components/Dispenser';
 import { Game } from './components/Game';
 import { CriarConta } from './components/CriarConta';

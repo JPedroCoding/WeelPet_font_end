@@ -23,12 +23,12 @@ export function Login({ isDarkTheme }) {
         {/* Formulário */}
         <div className="w-full sm:w-1/2 flex justify-center items-center max-sm:mb-10">
           <div className={ ` ${isDarkTheme ? "bg-headerblack" : "bg-header"}  bg-header rounded-3xl shadow-2xl p-6 sm:p-8 sm:-mt-30 text-white w-full  max-w-md max-sm:w-[90%]`}>
-            <img src={patinha} alt="" className="w-10 absolute" />
-            <h2 className={`${isDarkTheme ? "text-white" : "text-black"}text-3xl py-10  font-bold text-center mb-6`}>Login</h2>
-            <img src={patinha} alt="" className="w-10 absolute top-70 left-18" />
+            {/* <img src={patinha} alt="" className="w-10 absolute" /> */}
+            <h2 className={`${isDarkTheme ? "text-white" : "text-black"} text-3xl py-10  font-bold text-center mb-6`}>Login</h2>
+            {/* <img src={patinha} alt="" className="w-10 absolute top-70 left-18" />
             <img src={patinha} alt="" className="w-10 absolute top-2 left-80" />
             <img src={patinha} alt="" className="w-10 absolute top-3 left-30" />
-            <img src={patinha} alt="" className="w-10 absolute top-70 left-80" />
+            <img src={patinha} alt="" className="w-10 absolute top-70 left-80" /> */}
 
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
