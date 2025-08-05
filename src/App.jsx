@@ -5,7 +5,7 @@ import { PatasDecorativasBlack } from './components/PatasDecorativasBlack';
 import { Body } from './components/Body';
 import { useState, useEffect } from 'react';
 import { Referencias } from './components/Referencias';
-import { Login } from './components/login';
+import { Login } from './components/Login';
 import { Sobre } from './components/Sobre';
 import { Dispenser } from './components/Dispenser';
 import { Game } from './components/Game';
