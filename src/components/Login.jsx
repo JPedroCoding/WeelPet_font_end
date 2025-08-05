@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import gatinhaImg from "../assets/Gatinha.png";
 import ossoButton from "../assets/bt.png";
-import patinha from "../assets/Patinhas Claras.png";
 import ossoBlack from "../assets/Entrar-black.png"
 
 export function Login({ isDarkTheme }) {
