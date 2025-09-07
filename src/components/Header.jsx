@@ -119,12 +119,12 @@ export function Header({ isDarkTheme, setIsDarkTheme }) {
               <div
                 onClick={() => setIsDarkTheme(!isDarkTheme)}
                 className={`relative w-16 h-8 max-sm:w-14 max-sm:h-7 ${
-                  isDarkTheme ? 'bg-gray-300' : 'bg-white'
+                  isDarkTheme ? 'bg-white' : 'bg-gray-300'
                 } rounded-full cursor-pointer`}
               >
                 <span
                   className={`absolute w-6 h-6 top-0.5 ${
-                    isDarkTheme ? 'bg-white' : 'bg-black'
+                    isDarkTheme ? 'bg-gray-500' : 'bg-black'
                   } rounded-full transition-transform duration-300 ease-in-out ${
                     isDarkTheme ? 'translate-x-8' : 'translate-x-1'
                   }`}

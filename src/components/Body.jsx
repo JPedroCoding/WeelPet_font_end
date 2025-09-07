@@ -1,5 +1,5 @@
 import dog from "../assets/Doguinho.png";
-import rabo from "../assets/Rabo.png";
+
 import pata from "../assets/patas_claras_1.png";
 
 export function Body({ isDarkTheme }) {

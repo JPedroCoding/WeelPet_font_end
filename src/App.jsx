@@ -10,6 +10,8 @@ import { Sobre } from './components/Sobre';
 import { Dispenser } from './components/Dispenser';
 import { Game } from './components/Game';
 import { CriarConta } from './components/CriarConta';
+import { Projeto } from './components/Projeto';
+import { Tutorial } from './components/Tutorial';
 
 export function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -33,6 +35,10 @@ export function App() {
           <Route path="/sobre" element={<Sobre isDarkTheme={isDarkTheme} />} />
           <Route path="/Referencias" element={<Referencias isDarkTheme={isDarkTheme} />} />
           <Route path="/Dispenser" element={<Dispenser isDarkTheme={isDarkTheme} />} />
+          <Route path="/projeto" element={<Projeto isDarkTheme={isDarkTheme} />} />
+          <Route path="/tutorial" element={<Tutorial isDarkTheme={isDarkTheme} />} />
+
+
         </Routes>
       </div>
     </div>
