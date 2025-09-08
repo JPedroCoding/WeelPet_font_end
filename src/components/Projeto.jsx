@@ -159,36 +159,36 @@ export function Projeto({ isDarkTheme }) {
 
       {/* 🔥 Modal Card Projeto */}
       {selectedItem && (
-        <div className="fixed inset-0 flex justify-center items-center z-50">
-          <div className={`${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
+        <div className="fixed inset-0 flex justify-center items-center z-50" onClick={closePopup}>
+          <div className={`${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative md:max-w-sm md:p-5 sm:max-w-xs sm:p-4`} onClick={(e) => e.stopPropagation()}>
             <button
               onClick={closePopup}
-              className={`absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black"} text-lg font-bold`}
+              className={`absolute top-7 right-2 text-black ${isDarkTheme ? "text-white" : "text-black"} text-2xl font-bold`}
             >
               ✕
             </button>
             <img
               src={selectedItem.img}
               alt={selectedItem.name}
-              className="w-24 h-24 object-contain mx-auto mb-4"
+              className="w-24 h-24 object-contain mx-auto mb-4 md:w-20 md:h-20 sm:w-20 sm:h-20"
             />
-            <h3 className="text-xl font-semibold italic mb-2">{selectedItem.name}</h3>
-            <p className="text-sm mb-6 leading-relaxed">
+            <h3 className="text-xl font-semibold italic mb-2 md:text-lg sm:text-lg">{selectedItem.name}</h3>
+            <p className="text-sm mb-6 leading-relaxed md:text-xs sm:text-xs">
               Veja os detalhes técnicos e estrutura do projeto WellPet, com todas as especificações e diagramas.
             </p>
-            <p className="text-lg font-semibold mb-4">Preço: R${selectedItem.price.toFixed(2)}</p>
+            <p className="text-lg font-semibold mb-4 md:text-base sm:text-base">Preço: R${selectedItem.price.toFixed(2)}</p>
             {selectedItem.link && (
               <a
                 href={selectedItem.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600"} text-white font-semibold px-6 py-2 rounded-lg mr-2`}
+                className={`${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600"} text-white font-semibold px-6 py-2 rounded-lg mr-2 md:px-4 md:text-sm sm:px-4 sm:text-sm`}
               >
                 Ver Produto
               </a>
             )}
             <button
-              className={`${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600"} text-white font-semibold px-6 py-2 rounded-lg`}
+              className={`${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600"} text-white font-semibold px-6 py-2 rounded-lg md:px-4 md:text-sm sm:px-4 sm:text-sm`}
             >
               Adquirir
             </button>
