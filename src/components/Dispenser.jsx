@@ -118,11 +118,11 @@ export function Dispenser({ isDarkTheme }) {
           {/* 🔥 Modal Card Controle */}
     {selectedCard === "controle" && (
       <div className="fixed inset-0 flex justify-center items-center z-50">
-        <div className={`${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
+        <div className={` ${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
           {/* Botão fechar */}
           <button
             onClick={() => setSelectedCard(null)}
-            className={`absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
+            className={` cursor-pointer absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
           >
             ✕
           </button>
@@ -141,7 +141,7 @@ export function Dispenser({ isDarkTheme }) {
           </p>
           <button
             onClick={() => navigate("/tutorial")}
-            className={` ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  }  text-white font-semibold px-6 py-2 rounded-lg`}
+            className={` cursor-pointer ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  }  text-white font-semibold px-6 py-2 rounded-lg`}
           >
             App
           </button>
@@ -152,10 +152,10 @@ export function Dispenser({ isDarkTheme }) {
     {/* 🔥 Modal Card Game */}
     {selectedCard === "game" && (
       <div className="fixed inset-0 flex justify-center items-center z-50">
-        <div className={`${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
+        <div className={`  cursor-pointer ${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
           <button
             onClick={() => setSelectedCard(null)}
-             className={`absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
+             className={`cursor-pointer absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
           >
             ✕
           </button>
@@ -171,7 +171,7 @@ export function Dispenser({ isDarkTheme }) {
           </p>
           <button
             onClick={() => navigate("/game")}
-            className={` ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  }  text-white font-semibold px-6 py-2 rounded-lg`}
+            className={`cursor-pointer ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  }  text-white font-semibold px-6 py-2 rounded-lg`}
           >
             Game
           </button>
@@ -185,7 +185,7 @@ export function Dispenser({ isDarkTheme }) {
         <div  className={`${isDarkTheme ? "bg-gray-800 text-white" : "bg-[#FFE4B5]"} rounded-xl shadow-lg max-w-md w-full p-6 text-center relative`}>
           <button
             onClick={() => setSelectedCard(null)}
-           className={`absolute top-2 right-2 text-black ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
+           className={`absolute top-2 right-2 text-black cursor-pointer ${isDarkTheme ? "text-white" : "text-black" }  text-lg font-bold`}
           >
             ✕
           </button>
@@ -201,11 +201,28 @@ export function Dispenser({ isDarkTheme }) {
           </p>
           <button
             onClick={() => navigate("/projeto")}
-            className={` ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  }  text-white font-semibold px-6 py-2 rounded-lg`}          >
+            className={` ${isDarkTheme ? "bg-black hover:bg-gray-500" : "bg-orange-500 hover:bg-orange-600 "  } cursor-pointer  text-white font-semibold px-6 py-2 rounded-lg`}          >
             Projeto
           </button>
         </div>
+
+
+        {/* Rodapé */}
+      <footer
+        className={`fixed bottom-0 left-0 right-0 ${
+          isDarkTheme ? "bg-headerblack" : "bg-header"
+        } text-white z-40 px-6 py-4 shadow-md`}
+      >
+        <div className="mx-auto max-w-7xl flex justify-center items-center">
+          <p className="text-sm sm:text-base">
+            © 2025 WellPet - Todos os direitos reservados
+          </p>
+        </div>
+      </footer>
       </div>
+
+
+
     )}
 
     </section>

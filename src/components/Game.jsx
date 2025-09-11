@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import fundoGame from "../assets/bgGame.jpg";
+import fundoGame from "../assets/pixel.png";
 import bt from "../assets/Play.png";
 import cisco from "../assets/Rectangle.png";
+import musica from "../assets/musica.mp3";
 
 export function Game({ isDarkTheme }) {
   const [ciscos, setCiscos] = useState([]);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const novosCiscos = Array.from({ length: 25 }, () => ({
@@ -16,6 +19,28 @@ export function Game({ isDarkTheme }) {
     }));
     setCiscos(novosCiscos);
   }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (isPlaying) {
+      audio.play().catch((error) => {
+        console.log("Erro ao tocar áudio automaticamente:", error);
+        setIsPlaying(false); // Reverte o estado se o autoplay falhar
+      });
+    }
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch((error) => {
+        console.log("Erro ao tocar áudio:", error);
+      });
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
@@ -46,14 +71,14 @@ export function Game({ isDarkTheme }) {
       </div>
 
       {/* Imagem principal */}
-      <img src={fundoGame} alt="" className="w-xl -mt-6 relative z-10" />
+      <img src={fundoGame} alt="" className="sm:w-4xl w-6xl -mt-30 relative z-10" />
 
       {/* Botão Play pulsando */}
-      <div className="-mr-160 relative z-10">
+      <div className=" md:-mr-160  relative z-10 cursor-pointer">
         <motion.img
           src={bt}
           alt="Play"
-          className="w-30 -mt-65"
+          className="w-20 md:w-30 sm:-mt-20 -mt-10 sm:w-30  md:-mt-105"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{
             duration: 1.5,
@@ -61,6 +86,22 @@ export function Game({ isDarkTheme }) {
             ease: "easeInOut",
           }}
         />
+      </div>
+
+      {/* Controle de música */}
+      <div className="absolute bottom-4 right-4 z-20">
+        <audio ref={audioRef} loop>
+          <source src={musica} type="audio/mpeg" />
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <button
+          onClick={togglePlay}
+          className={`px-4 py-2 rounded text-white font-semibold ${
+            isDarkTheme ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"
+          }`}
+        >
+          {isPlaying ? "Pausar Música" : "Tocar Música"}
+        </button>
       </div>
     </div>
   );
